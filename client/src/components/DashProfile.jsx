@@ -44,6 +44,7 @@ export default function DashProfile() {
     //     }
     //   }
     // }
+    setImageFileUploadError(null);
     const storage = getStorage(app);
     const fileName = new Date().getTime() + imageFile.name;
     const storageRef = ref(storage, fileName);
@@ -62,6 +63,9 @@ export default function DashProfile() {
           "Could not upload image (File must be less than 2MB)",
           error
         );
+        setImageFileUploadProgress(null);
+        setImageFile(null);
+        setImageFileUrl(null);
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -110,7 +114,11 @@ export default function DashProfile() {
           <img
             src={imageFileUrl || currentUser.profilePhoto}
             alt="current user"
-            className="w-full h-full object-cover border-8 border-[lightgray] rounded-full"
+            className={`w-full h-full object-cover border-8 border-[lightgray] rounded-full ${
+              imageFileUploadProgress &&
+              imageFileUploadProgress < 100 &&
+              "opacity-60"
+            }`}
           />
         </div>
         {imageFileUploadError && (
