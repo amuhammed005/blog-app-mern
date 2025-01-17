@@ -13,8 +13,8 @@ export default function Header() {
   const { currentUser } = useSelector((state) => state?.user);
 
   return (
-    <div>
-      <Navbar className="border-b-2">
+    <div className="w-[100vw]">
+      <Navbar className="border-b-2 md:px-10 lg:px-24">
         <Link
           to="/"
           className="text-sm sm:text-xl self-center whitespace-nowrap dark:text-white"
