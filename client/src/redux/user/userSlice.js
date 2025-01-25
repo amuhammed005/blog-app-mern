@@ -22,10 +22,16 @@ export const userSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    updateProfilePhoto: (state, action) => {
+      if (state.currentUser) {
+        state.currentUser.profilePhoto = action.payload; // Update the profile photo URL
+      }
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { signInStart, signInSuccess, signInFailure } = userSlice.actions;
+export const { signInStart, signInSuccess, signInFailure, updateProfilePhoto } =
+  userSlice.actions;
 
 export default userSlice.reducer;

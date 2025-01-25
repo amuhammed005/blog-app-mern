@@ -50,8 +50,8 @@ export default function Header() {
               inline
               label={
                 <Avatar
-                  alt="user avatar"
                   img={currentUser.profilePhoto}
+                  alt="user avatar"
                   rounded
                 />
               }

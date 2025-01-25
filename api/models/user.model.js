@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
     profilePhoto: {
       type: String,
       default:
-        "https://pixabay.com/vectors/blank-profile-picture-mystery-man-973460/",
+        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
     },
   },
   { timestamps: true }

@@ -1,11 +1,11 @@
 {
   "name": "blog-app-mern",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon api/index.js"
+    "dev": "nodemon api/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
     "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
